@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.imag_folder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    display: flex;
+    padding: 20px;
+    float: left;
+}

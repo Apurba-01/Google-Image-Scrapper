@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+    <title>Images</title>
+</head>
+<body>
+
+    {% for data in img_data %}
+        <div class = " img-folder"> 
+            <img src="data:image/jpeg;base64,{{ data["Image"] }}" alt="Image {{ data["Index"] }}">
+        </div>
+    {% endfor %}
+
+    <script>
+        // Decode and display images
+        window.onload = function() {
+            var images = document.getElementsByTagName('img');
+            for (var i = 0; i < images.length; i++) {
+                var base64Image = images[i].getAttribute('src').split(',')[1];
+                images[i].src = "data:image/jpeg;base64," + base64Image;
+            }
+        };
+    </script>
+
+</body>
+</html>
